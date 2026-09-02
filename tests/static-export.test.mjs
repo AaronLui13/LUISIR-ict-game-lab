@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 test("exports the game hub and Mars mission as static pages", async () => {
@@ -18,5 +18,7 @@ test("exports the game hub and Mars mission as static pages", async () => {
     assert.match(home, /\/LUISIR-ict-game-lab\/_next\/static/);
     assert.match(home, /\/LUISIR-ict-game-lab\/games\/mars-iot-rescue/);
     assert.match(game, /\/LUISIR-ict-game-lab\/og\.png/);
+    await access(new URL("../dist/client/_next/", import.meta.url));
+    await assert.rejects(access(new URL("../dist/client/LUISIR-ict-game-lab/_next/", import.meta.url)));
   }
 });
