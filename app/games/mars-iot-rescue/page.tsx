@@ -6,7 +6,7 @@ export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Mars IoT Rescue | Lui Sir’s ICT Game Lab",
-  description: "A three-mission classroom game about sensors, networks, processing and actuators.",
+  description: "A five-mission classroom game about sensors, networks, processing and actuators.",
   openGraph: {
     title: "Mars IoT Rescue",
     description: "Save a Mars base by building reliable IoT automation rules.",

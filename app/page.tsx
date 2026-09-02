@@ -37,7 +37,7 @@ export default function Home() {
             <h2>Mars IoT Rescue</h2>
             <p>Restore the life-support network before the crew runs out of time.</p>
             <div className="mission-meta">
-              <span>IoT SYSTEMS</span><span>6–8 MIN</span><span>S3</span>
+              <span>IoT SYSTEMS</span><span>8–10 MIN</span><span>S3</span>
             </div>
           </div>
         </div>

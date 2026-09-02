@@ -14,13 +14,13 @@ const perfectRules = [
 ];
 
 test("accepts safe rules for the final mission", () => {
-  const result = validateRules(MISSIONS[2], perfectRules);
+  const result = validateRules(MISSIONS[4], perfectRules);
   assert.equal(result.success, true);
   assert.deepEqual(result.issues, []);
 });
 
 test("explains an incorrect actuator and unsafe threshold", () => {
-  const result = validateRules(MISSIONS[2], [
+  const result = validateRules(MISSIONS[4], [
     { sensor: "oxygen", actuator: "pump", threshold: 19 },
     { sensor: "temperature", actuator: "cooling", threshold: 30 },
     { sensor: "water", actuator: "pump", threshold: 45 },
@@ -32,10 +32,17 @@ test("explains an incorrect actuator and unsafe threshold", () => {
 });
 
 test("safe automation improves all endangered readings", () => {
-  const start = MISSIONS[2].start;
-  const next = advanceReadings(start, MISSIONS[2], perfectRules);
+  const start = MISSIONS[4].start;
+  const next = advanceReadings(start, MISSIONS[4], perfectRules);
   assert.ok(next.oxygen > start.oxygen);
   assert.ok(next.temperature < start.temperature);
   assert.ok(next.water > start.water);
-  assert.ok(calculateEnergy(MISSIONS[2], perfectRules) >= 70);
+  assert.ok(calculateEnergy(MISSIONS[4], perfectRules) >= 70);
+});
+
+test("raises difficulty one system at a time across five missions", () => {
+  assert.equal(MISSIONS.length, 5);
+  assert.deepEqual(MISSIONS.map((mission) => mission.required.length), [1, 1, 1, 2, 3]);
+  assert.deepEqual(MISSIONS[2].required, ["water"]);
+  assert.deepEqual(MISSIONS[3].required, ["temperature", "water"]);
 });

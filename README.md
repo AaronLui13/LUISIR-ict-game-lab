@@ -8,12 +8,12 @@ Short, interactive ICT simulations designed for classroom demonstration and inde
 
 ### Mission 01 — Mars IoT Rescue
 
-Students repair a Mars base by connecting sensors to suitable actuators and setting safe automation thresholds. Three escalating missions make this data flow visible:
+Students repair a Mars base by connecting sensors to suitable actuators and setting safe automation thresholds. Five progressively harder missions make this data flow visible:
 
 `Sensor → Network → Processing → Actuator`
 
 - Traditional Chinese interface with English ICT vocabulary
-- 6–8 minute session
+- 8–10 minute session
 - Guided first mission followed by independent challenges
 - Local score, three-star rating, sound controls and instant retry
 - Projector, tablet and phone layouts

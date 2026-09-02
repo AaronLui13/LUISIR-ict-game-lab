@@ -249,10 +249,10 @@ export function MarsMission() {
         <section className="intro-briefing">
           <span className="kicker">MISSION FILE // IoT-01</span>
           <h1>MARS <span>IoT</span> RESCUE</h1>
-          <p className="intro-lead">火星 Elysium 基地的生命維持網絡發生故障。你有三個任務，必須利用感應數據建立自動規則，救回基地。</p>
+          <p className="intro-lead">火星 Elysium 基地的生命維持網絡發生故障。你有五個逐步升級的任務，必須利用感應數據建立自動規則，救回基地。</p>
           <div className="briefing-grid">
             <div><small>LEARNING FOCUS</small><b>Sensor → Network → Processing → Actuator</b></div>
-            <div><small>MISSION TIME</small><b>6–8 minutes</b></div>
+            <div><small>MISSION TIME</small><b>8–10 minutes</b></div>
             <div><small>DATA POLICY</small><b>No login · On-device score</b></div>
           </div>
           <button className="primary-action" onClick={() => startMission(0)}>開始任務 <span>START MISSION</span></button>
@@ -286,7 +286,7 @@ export function MarsMission() {
   if (stage === "result" && result) {
     return (
       <main className={`mars-game result-screen ${result.success ? "result-success" : "result-fail"}`}>
-        <header className="game-topbar"><a href={`${BASE_PATH}/`} className="lab-link">LUI SIR’S ICT GAME LAB</a><span>MISSION {mission.number} / 03</span></header>
+        <header className="game-topbar"><a href={`${BASE_PATH}/`} className="lab-link">LUI SIR’S ICT GAME LAB</a><span>MISSION {mission.number} / 05</span></header>
         <section className="result-card">
           <span className="result-seal">{result.success ? "✓" : "!"}</span>
           <span className="kicker">{result.success ? "SYSTEM STABLE" : "SYSTEM FAILURE"}</span>
@@ -302,7 +302,7 @@ export function MarsMission() {
           )}
           <div className="learning-chain compact" aria-label="IoT data flow"><b>SENSOR</b><span>→</span><b>NETWORK</b><span>→</span><b>PROCESSING</b><span>→</span><b>ACTUATOR</b></div>
           {result.success ? (
-            <button className="primary-action" onClick={() => missionIndex < 2 ? startMission(missionIndex + 1) : finishGame()}>{missionIndex < 2 ? "下一個任務" : "查看任務報告"}<span>{missionIndex < 2 ? "NEXT MISSION" : "FINAL REPORT"}</span></button>
+            <button className="primary-action" onClick={() => missionIndex < MISSIONS.length - 1 ? startMission(missionIndex + 1) : finishGame()}>{missionIndex < MISSIONS.length - 1 ? "下一個任務" : "查看任務報告"}<span>{missionIndex < MISSIONS.length - 1 ? "NEXT MISSION" : "FINAL REPORT"}</span></button>
           ) : (
             <button className="primary-action" onClick={() => startMission(missionIndex)}>重新配置 <span>TRY AGAIN</span></button>
           )}
@@ -315,9 +315,9 @@ export function MarsMission() {
     <main className={`mars-game control-room ${stage === "running" ? "is-running" : ""}`}>
       <header className="game-topbar">
         <a href={`${BASE_PATH}/`} className="lab-link">LUI SIR’S ICT GAME LAB</a>
-        <div className="mission-progress" aria-label={`Mission ${missionIndex + 1} of 3`}>
+        <div className="mission-progress" aria-label={`Mission ${missionIndex + 1} of ${MISSIONS.length}`}>
           {MISSIONS.map((item, index) => <i key={item.number} className={index <= missionIndex ? "active" : ""} />)}
-          <span>MISSION {mission.number} / 03</span>
+          <span>MISSION {mission.number} / 05</span>
         </div>
         <button className="icon-button" onClick={toggleSound}>{soundOn ? "SOUND ON" : "SOUND OFF"}</button>
       </header>

@@ -6,7 +6,7 @@ export const GAME_CATALOG = [
     title: "Mars IoT Rescue",
     topic: "Internet of Things",
     level: "S3",
-    duration: "6–8 min",
+    duration: "8–10 min",
     status: "READY",
   },
 ] as const;
