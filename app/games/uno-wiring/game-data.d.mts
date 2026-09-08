@@ -1,0 +1,12 @@
+export type Endpoint = 'anode' | 'cathode' | 'r1' | 'r2' | 'signal' | 'ground';
+export type Holes = Record<Endpoint, string>;
+export type Code = {mode: string; pin: string; level: string};
+export const ENDPOINTS: [Endpoint,string][];
+export const GUIDE: Holes;
+export const EMPTY: Holes;
+export function net(hole:string): string | null;
+export function circuit(holes:Holes,source?:string,returnPin?:string): {kind:string;detail:string};
+export function verify(code:Code): string | null;
+export function upload(code:Code,usb:boolean,board:string,port:string): {error?:string;program?:Code};
+export function lit(holes:Holes,source:string,returnPin:string,usb:boolean,program:Code|null): boolean;
+export function wiringFeedback(holes:Holes,round?:number,source?:string,returnPin?:string): {error:boolean;text:string};

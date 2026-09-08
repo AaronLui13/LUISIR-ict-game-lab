@@ -9,4 +9,14 @@ export const GAME_CATALOG = [
     duration: "8–10 min",
     status: "READY",
   },
+  {
+    slug: "uno-wiring",
+    href: "/games/uno-wiring/",
+    number: "02",
+    title: "點亮第一顆 LED",
+    topic: "Arduino · 接線與數位輸出",
+    level: "S3",
+    duration: "8–10 min",
+    status: "READY",
+  },
 ] as const;

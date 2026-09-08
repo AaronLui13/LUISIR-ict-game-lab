@@ -18,6 +18,12 @@ Students repair a Mars base by connecting sensors to suitable actuators and sett
 - Local score, three-star rating, sound controls and instant retry
 - Projector, tablet and phone layouts
 
+### Mission 02 — 點亮第一顆 LED
+
+A two-round Arduino Uno wiring simulation for Unit 01. Students connect an LED circuit, select the board and Windows COM port in an Arduino IDE 1.8.18 teaching interface, and upload HIGH then LOW. The second round accepts independently chosen breadboard holes and awards independent completion when no hints are used.
+
+See [the wiring game design record](docs/UNO_WIRING.md) for implemented behaviour and simulation limits.
+
 ## Development
 
 Requires Node.js 22 or later.
