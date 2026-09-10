@@ -19,4 +19,14 @@ export const GAME_CATALOG = [
     duration: "8–10 min",
     status: "READY",
   },
+  {
+    slug: "three-light-lab",
+    href: "/games/three-light-lab/",
+    number: "03",
+    title: "三色燈實驗室",
+    topic: "Arduino · 程式次序與三色燈",
+    level: "S3",
+    duration: "8–10 min",
+    status: "READY",
+  },
 ] as const;

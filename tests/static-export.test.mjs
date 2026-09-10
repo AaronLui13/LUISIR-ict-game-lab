@@ -32,3 +32,13 @@ test("exports the game hub and Mars mission as static pages", async () => {
  assert.match(game, /給我線索/);
  if (process.env.GITHUB_ACTIONS === "true") assert.match(home, /\/LUISIR-ict-game-lab\/games\/uno-wiring/);
 });
+
+test('exports the three-light lesson and catalog entry', async()=>{
+ const home=await readFile(new URL('../dist/client/index.html',import.meta.url),'utf8');
+ const game=await readFile(new URL('../dist/client/games/three-light-lab.html',import.meta.url),'utf8');
+ assert.match(home,/games\/three-light-lab/);
+ assert.match(game,/三色燈/);
+ assert.match(game,/共同接地/);
+ assert.match(game,/跳過教學/);
+ if(process.env.GITHUB_ACTIONS==='true')assert.match(home,/\/LUISIR-ict-game-lab\/games\/three-light-lab/);
+});

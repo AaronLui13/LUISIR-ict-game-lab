@@ -24,6 +24,12 @@ A two-round Arduino Uno wiring simulation for Unit 01. Students connect an LED c
 
 See [the wiring game design record](docs/UNO_WIRING.md) for implemented behaviour and simulation limits.
 
+### Mission 03 — 三色燈實驗室
+
+Unit 02 starts with skippable common-ground and single-LED lessons before practice/challenge selection. Students wire and test three LEDs, predict a new program, adjust timings, and repair a missing LOW instruction. Hints switch challenge runs to practice without losing progress.
+
+See [the three-light design record](docs/THREE_LIGHT_LAB.md) for the workflow and simulation limits.
+
 ## Development
 
 Requires Node.js 22 or later.
