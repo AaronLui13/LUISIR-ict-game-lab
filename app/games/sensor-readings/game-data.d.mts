@@ -1,0 +1,14 @@
+export type Part='ldr1'|'ldr2'|'r1'|'r2'|'vcc'|'ground'|'input';
+export type Wiring=Record<Part,string>;
+export type Code={baud:number;pin:string;print:boolean;delay:number};
+export type Records=Record<string,number[]>;
+export const PARTS:[Part,string,string][];
+export const CONDITIONS:{id:string;name:string;light:number}[];
+export function emptyWiring():Wiring;
+export function net(hole:string):string|null;
+export function pair(part:Part):Part|null;
+export function checkWiring(w:Wiring,resistance?:number):{safe:boolean;ready:boolean;kind:string;text:string};
+export function reading(light:number,kind?:string,resistance?:number,sample?:number):number|null;
+export function validateCode(code:Code):string;
+export function serialState(s:{power:boolean;uploaded:Code|null;port:string;monitor:boolean;baud:number;kind:string}):string;
+export function evidenceCorrect(records:Records,bright:string,dark:string,trend:string,unit:string,factor:string):boolean;

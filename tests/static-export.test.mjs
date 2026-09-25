@@ -42,3 +42,10 @@ test('exports the three-light lesson and catalog entry', async()=>{
  assert.match(game,/跳過教學/);
  if(process.env.GITHUB_ACTIONS==='true')assert.match(home,/\/LUISIR-ict-game-lab\/games\/three-light-lab/);
 });
+
+test('exports Unit 03 sensor lab and catalog entry with base path',async()=>{
+ const home=await readFile(new URL('../dist/client/index.html',import.meta.url),'utf8');
+ const page=await readFile(new URL('../dist/client/games/sensor-readings.html',import.meta.url),'utf8');
+ assert.match(home,/games\/sensor-readings/);assert.match(page,/讓電腦/);assert.match(page,/LDR Sensor Lab/);assert.match(page,/跳過教學/);
+ if(process.env.GITHUB_ACTIONS==='true')assert.match(home,/\/LUISIR-ict-game-lab\/games\/sensor-readings/);
+});

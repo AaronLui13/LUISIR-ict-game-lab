@@ -15,7 +15,7 @@ export default function Home() {
 
       <section className="hub-hero" id="top">
         <div className="hero-copy">
-          <span className="eyebrow">CLASSROOM MISSIONS · 03</span>
+          <span className="eyebrow">CLASSROOM MISSIONS · 04</span>
           <h1>Learn ICT.<br /><em>Run the mission.</em></h1>
           <p>
             Step into interactive simulations where every decision makes a system

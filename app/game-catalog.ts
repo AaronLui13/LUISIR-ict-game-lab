@@ -29,4 +29,14 @@ export const GAME_CATALOG = [
     duration: "8–10 min",
     status: "READY",
   },
+  {
+    slug: "sensor-readings",
+    href: "/games/sensor-readings/",
+    number: "04",
+    title: "讓電腦看見光",
+    topic: "Arduino · 感應器與電腦讀數",
+    level: "S3",
+    duration: "8–10 min",
+    status: "READY",
+  },
 ] as const;

@@ -30,6 +30,12 @@ Unit 02 starts with skippable common-ground and single-LED lessons before practi
 
 See [the three-light design record](docs/THREE_LIGHT_LAB.md) for the workflow and simulation limits.
 
+### Mission 04 — 讓電腦看見光
+
+Unit 03 follows the LDR worksheet: build a voltage divider, set up Serial Monitor, collect three readings under each light condition, explain the evidence, and reconnect A0 independently. Uses illustrative raw ADC readings, with no hardware connection or student-data collection.
+
+See [the sensor lab design record](docs/SENSOR_READINGS.md) for implemented behaviour and simulation limits.
+
 ## Development
 
 Requires Node.js 22 or later.
